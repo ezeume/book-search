@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+import Search from "../components/Search";
 import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import DeleteBtn from "../components/DeleteBtn";
 
-function Books() {
+function Home() {
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
 
@@ -51,10 +52,8 @@ function Books() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
+          <Col size="md-12">
+            
             <form>
               <Input
                 onChange={handleInputChange}
@@ -79,10 +78,8 @@ function Books() {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
+          <Col size="md-12 sm-12">
+           
             {books.length ? (
               <List>
                 {books.map(book => (
@@ -106,4 +103,4 @@ function Books() {
   }
 
 
-export default Books;
+export default Home;

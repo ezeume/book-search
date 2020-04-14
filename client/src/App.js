@@ -1,8 +1,10 @@
 import React from "react";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
+import Home from "./pages/Home";
+import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Jumbotron from "./components/Jumbotron";
+import Footer from "./components/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // The app will not render correctly until you setup a Route component.
@@ -14,12 +16,14 @@ function App() {
     <BrowserRouter>
       <div>
         <Nav />
+        <Jumbotron />
         <Switch>
-          <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/books" component={Home} />
+          <Route exact path="/Saved" component={Saved} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

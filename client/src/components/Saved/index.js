@@ -1,6 +1,6 @@
 import React from "react";
 
-function Save() {
+function Saved() {
     return (
       <div>
       <h1>Hello</h1>
@@ -9,4 +9,4 @@ function Save() {
   }
 
 
-export default Save;
+export default Saved;

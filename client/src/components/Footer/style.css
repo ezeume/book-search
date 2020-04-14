@@ -1,0 +1,12 @@
+.footer {
+    background-color: rgb(12, 12, 51);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}  
