@@ -11,6 +11,7 @@ import DeleteBtn from "../components/DeleteBtn";
 
 function Home() {
   const [books, setBooks] = useState([])
+
   const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
@@ -19,7 +20,10 @@ function Home() {
 
   function loadBooks() {
     console.log(formObject)
-    API.getBooks(formObject.search )
+    // if(!formObject.search){
+    //   setFormObject(formObject.search:"harry potter")
+    // }
+    API.getBooks(formObject.search)
       .then(res => {
         console.log(res.data);
         setBooks(res.data)
@@ -64,14 +68,14 @@ function Home() {
                         className="form-control mr-sm-2" 
                         type="search" 
                         name="search"
-                     
+                        onChange={handleInputChange}
                         placeholder="Search" 
                         aria-label="Search" />
                         <button 
                         className="btn btn-outline-success my-2 my-sm-0" 
                         
                         type="submit"
-                        onClick={loadBooks()}>Search</button>
+                        onClick={loadBooks}>Search</button>
                     </form>
           </Col>
         </Row>
@@ -114,13 +118,15 @@ function Home() {
             </form>
           </Col>
           <Col size="md-12 sm-12">
-            {books.length ? (
+        {books.kind}
+            {books.kind ? (
               <List>
-                {books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {books.items.map(book => (
+                  <ListItem key={book.id}>
+                    <Link to={"/books/" + book.id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.volumeInfo.title} by {book.volumeInfo.authors
+                        }
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />
