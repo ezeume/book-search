@@ -3,3 +3,10 @@
     height: 300px;
     border-bottom: solid;
 }
+
+.header {
+    background: rgb(12, 12, 51);
+    height: 200px;
+    border-bottom: solid;
+    border-color: red;
+}

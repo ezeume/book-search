@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
+import CurrentBook from "./pages/currentbook"
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/books" component={Home} />
+          <Route exact path="/books/:id" component={CurrentBook} />
           <Route exact path="/Saved" component={Saved} />
           <Route component={NoMatch} />
         </Switch>

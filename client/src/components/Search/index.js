@@ -4,8 +4,8 @@ import "../Search/style.css";
 
 function Search() {
     return (
-
-            <div className="row">
+        <div className="row">
+            <div className="header">
                 <div className="searchInput">
                     <form className="form-inline">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
@@ -13,6 +13,10 @@ function Search() {
                     </form>
                 </div>
             </div>
+        </div>
+
+
+
 
     );
 

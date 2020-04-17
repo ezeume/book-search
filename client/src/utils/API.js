@@ -3,8 +3,12 @@ import axios from "axios";
 //Front end api routes
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  getBooks: function(search) {
+    console.log("https://www.googleapis.com/books/v1/volumes?q="+search)
+    return axios.get("https://www.googleapis.com/books/v1/volumes?q="+search);
+  },
+  getSaved: function() {
+    return axios.get("/api/books/");
   },
   // Gets the book with the given id
   getBook: function(id) {
